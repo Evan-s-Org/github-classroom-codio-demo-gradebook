@@ -32,3 +32,21 @@ def is_passing(score):
     """Return True if the score is passing, otherwise False."""
     # TODO: A score of exactly 60 should count as passing.
     return score > 60
+
+
+# freeze code begin
+def main():
+    scores_text = input()
+    scores = [float(score.strip()) for score in scores_text.split(",")]
+
+    average = calculate_average(scores)
+
+    print(f"Class average: {average:.2f}")
+
+    for score in scores:
+        print(f"{score:.0f}: {letter_grade(score)}, passing: {is_passing(score)}")
+
+
+if __name__ == "__main__":
+    main()
+# freeze code end
